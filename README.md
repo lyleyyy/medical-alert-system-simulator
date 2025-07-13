@@ -1,69 +1,55 @@
 # Medical Alert Simulation System
 
-This is a university project simulating a medical decision support system using Python and object-oriented design. The project extends a set of instructor-provided base classes to implement modules for login authentication, patient management, and emergency alerts based on dynamic symptom evaluation.
-
-> **Note:** This project depends on base class modules (e.g., `PatientBase`, `LoginSystemBase`, `AlertSystemBase`) provided by the course and does not include `tree_of_symptoms.py` as it was not completed.
+This is a Python-based simulation project for modeling a hospital alert system using core data structures and algorithms. It was developed as part of a university assignment with a focus on object-oriented programming and algorithmic design.
 
 ---
 
-## 📦 Features
+## 🧠 Core Algorithms & Data Structures
 
-- **Login System**: Simulates healthcare staff login/logout using secure identity handling (`LoginSystem`).
-- **Patient Records**: Stores and manages patient data (ID, age, symptoms, risk levels) via custom `Patient` class.
-- **Alert System**: Evaluates each patient and raises alerts based on contagiousness or critical condition using a subclassed `AlertSystem`.
+### ✅ Data Structures
 
----
+- **Doubly Linked List**  
+  Implemented manually using a custom `Node` class with `next` and `prev` pointers to simulate patient queues in `hospital_2.py`. Supports head/middle/tail insertions.
 
-## 🧠 Technologies Used
+- **List**  
+  Used throughout the system to manage collections of users, symptoms, and patients.
 
-- Python 3
-- Object-Oriented Programming (OOP)
-- Inheritance from base classes
-- Class design and modular structure
+- **Stack**  
+  Simulated using `.append()` and `.pop()` to model LIFO behavior in symptom tracking and condition evaluation.
 
----
+### ⚙️ Algorithms
 
-## 🚀 How to Use
+- **Recursion**  
+  Employed in patient processing, login handling, and condition analysis. Recursion is used to simulate tree-like behaviors and multi-step decision paths.
 
-This is a **class-based module project** and is **not directly executable** as a standalone application. It is intended to be used as part of a larger system or evaluated through unit tests.
-
-You can manually test the functionality by importing the classes and calling their methods:
-
-```python
-from alert_system import AlertSystem
-from patient import Patient
-from login_system import LoginSystem
-
-# Example
-p = Patient("P001", 25)
-p.add_symptom("fever")
-p.set_critical(True)
-
-system = AlertSystem()
-print(system.check_patient(p))  # True or False
-```
-
-Ensure the following base modules are present in the same directory:
-
-```
-login_system_base.py
-alert_system_base.py
-patient_base.py
-```
+- **Sorting**  
+  Leveraged built-in `sort()` and `sorted()` methods to prioritize patients based on criticality and symptom severity, particularly in `hospital_3.py`.
 
 ---
 
-## 📁 File Overview
+## 📁 Functional Modules
 
 | File | Description |
 |------|-------------|
-| `login_system.py` | Handles user login/logout |
-| `patient.py` | Manages patient symptom info |
-| `alert_system.py` | Triggers alerts for critical/contagious cases |
+| `login_system.py` | Simulates a user login system with recursive logic |
+| `patient.py` | Encapsulates patient records and symptom status |
+| `alert_system.py` | Triggers alerts for contagious or critical patients |
+| `hospital_1/2/3.py` | Variants of hospital triage logic using different data handling methods |
+| `tree_of_symptoms.py` | (Partially implemented) intended for tree-based symptom evaluation |
+
+> This project depends on course-provided base classes (e.g., `LoginSystemBase`, `AlertSystemBase`) and is not designed to run standalone.
 
 ---
 
-## 🙋 Author Note
+## 🔬 Technologies
 
-This project was completed as part of a university assignment. The `tree_of_symptoms.py` module was not implemented.
+- Python 3
+- Object-Oriented Programming (OOP)
+- Custom Data Structures & Algorithm Design
+
+---
+
+## ❗Note
+
+This is a modular project intended for use in automated unit tests or as part of a larger evaluation framework. It does not include a main entry point for execution.
 
